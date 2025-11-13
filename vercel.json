@@ -1,8 +1,0 @@
-{
-  "buildCommand": "cd apps/web && prisma generate && next build",
-  "devCommand": "cd apps/web && next dev",
-  "installCommand": "cd apps/web && npm install",
-  "outputDirectory": "apps/web/.next",
-  "framework": "nextjs",
-  "regions": ["iad1"]
-}
