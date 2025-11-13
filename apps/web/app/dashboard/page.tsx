@@ -22,8 +22,7 @@ async function getTrends() {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
   try {
     const res = await fetch(`${baseUrl}/api/invoice-trends`, { 
-      cache: 'no-store',
-      next: { revalidate: 0 }
+      cache: 'no-store'
     });
     if (!res.ok) return [];
     return res.json();
@@ -36,8 +35,7 @@ async function getVendors() {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
   try {
     const res = await fetch(`${baseUrl}/api/vendors/top10`, { 
-      cache: 'no-store',
-      next: { revalidate: 0 }
+      cache: 'no-store'
     });
     if (!res.ok) return [];
     return res.json();
@@ -50,8 +48,7 @@ async function getCategorySpend() {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
   try {
     const res = await fetch(`${baseUrl}/api/category-spend`, { 
-      cache: 'no-store',
-      next: { revalidate: 0 }
+      cache: 'no-store'
     });
     if (!res.ok) return [];
     return res.json();
@@ -64,8 +61,7 @@ async function getCashOutflow() {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
   try {
     const res = await fetch(`${baseUrl}/api/cash-outflow`, { 
-      cache: 'no-store',
-      next: { revalidate: 0 }
+      cache: 'no-store'
     });
     if (!res.ok) return [];
     return res.json();
@@ -78,8 +74,7 @@ async function getInvoices() {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
   try {
     const res = await fetch(`${baseUrl}/api/invoices?page=1&limit=10`, {
-      cache: 'no-store',
-      next: { revalidate: 0 }
+      cache: 'no-store'
     });
     if (!res.ok) return { invoices: [], total: 0, page: 1, totalPages: 0 };
     return res.json();

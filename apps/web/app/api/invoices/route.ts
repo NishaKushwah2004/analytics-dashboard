@@ -1,13 +1,14 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import { prisma } from '@/lib/db';
 import type { Invoice } from '@prisma/client';
 
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url);
+    const searchParams = request.nextUrl.searchParams;
     const search = searchParams.get('search') || '';
     const status = searchParams.get('status') || 'all';
     const dateFrom = searchParams.get('dateFrom');
@@ -22,8 +23,8 @@ export async function GET(request: Request) {
 
     if (search) {
       where.OR = [
-        { invoiceNumber: { contains: search, mode: 'insensitive' } },
-        { vendor: { is: { name: { contains: search, mode: 'insensitive' } } } },
+        { invoiceNumber: { contains: search, mode: 'insensitive' as const } },
+        { vendor: { is: { name: { contains: search, mode: 'insensitive' as const} } } },
       ];
     }
 
@@ -67,7 +68,7 @@ export async function GET(request: Request) {
     
     const formattedInvoices = invoices.map((invoice) => ({
       id: invoice.id,
-      vendor: invoice.vendor?.name || "Unknown Vendor",
+      vendor: invoice.vendor.name,
       date: invoice.invoiceDate,
       invoiceNumber: invoice.invoiceNumber,
       amount: Math.abs(invoice.summary?.invoiceTotal || 0),
