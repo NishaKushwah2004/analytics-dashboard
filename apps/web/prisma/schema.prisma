@@ -1,0 +1,157 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Document {
+  id             String    @id @default(uuid())
+  name           String
+  filePath       String
+  fileSize       BigInt
+  fileType       String
+  status         String
+  organizationId String
+  departmentId   String
+  analyticsId    String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  processedAt    DateTime?
+  metadata       Json
+  validatedData  Json?
+  invoice        Invoice?
+
+  @@index([organizationId])
+  @@index([departmentId])
+  @@index([status])
+  @@index([createdAt])
+  @@index([analyticsId])
+}
+
+model Invoice {
+  id            String     @id @default(uuid())
+  documentId    String     @unique
+  invoiceNumber String
+  invoiceDate   DateTime
+  deliveryDate  DateTime?
+  dueDate       DateTime?
+  status        String     @default("pending")
+  vendorId      String
+  customerId    String
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  customer      Customer   @relation(fields: [customerId], references: [id])
+  document      Document   @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  vendor        Vendor     @relation(fields: [vendorId], references: [id])
+  lineItems     LineItem[]
+  payment       Payment?
+  summary       Summary?
+
+  @@index([invoiceNumber])
+  @@index([invoiceDate])
+  @@index([status])
+  @@index([vendorId])
+  @@index([customerId])
+}
+
+model Vendor {
+  id          String    @id @default(uuid())
+  name        String
+  partyNumber String?
+  address     String?
+  taxId       String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  invoices    Invoice[]
+
+  @@unique([name, taxId])
+  @@index([name])
+}
+
+model Customer {
+  id        String    @id @default(uuid())
+  name      String    @unique
+  address   String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  invoices  Invoice[]
+
+  @@index([name])
+}
+
+model LineItem {
+  id           String   @id @default(uuid())
+  invoiceId    String
+  srNo         Int
+  description  String
+  quantity     Float
+  unitPrice    Float
+  totalPrice   Float
+  sachkonto    String?
+  buSchluessel String?
+  category     String?  @default("General")
+  createdAt    DateTime @default(now())
+  invoice      Invoice  @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+
+  @@index([invoiceId])
+  @@index([category])
+}
+
+model Payment {
+  id                 String    @id @default(uuid())
+  invoiceId          String    @unique
+  dueDate            DateTime?
+  paymentTerms       String?
+  bankAccountNumber  String?
+  bic                String?
+  accountName        String?
+  netDays            Int       @default(0)
+  discountPercentage Float?
+  discountDays       Int?
+  discountDueDate    DateTime?
+  discountedTotal    Float?
+  createdAt          DateTime  @default(now())
+  invoice            Invoice   @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+
+  @@index([dueDate])
+}
+
+model Summary {
+  id             String   @id @default(uuid())
+  invoiceId      String   @unique
+  documentType   String?
+  subTotal       Float
+  totalTax       Float
+  invoiceTotal   Float
+  currencySymbol String   @default("EUR")
+  createdAt      DateTime @default(now())
+  invoice        Invoice  @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+}
+
+model ChatSession {
+  id        String        @id @default(uuid())
+  userId    String        @default("default")
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  messages  ChatMessage[]
+
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model ChatMessage {
+  id        String      @id @default(uuid())
+  sessionId String
+  role      String
+  content   String
+  sql       String?
+  results   Json?
+  createdAt DateTime    @default(now())
+  session   ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([sessionId])
+  @@index([createdAt])
+}

@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* === BACKGROUNDS === */
+    --background: 0 0% 100%;           /* #F8FAFC - Light gray background */
+    --foreground: 240 10% 3.9%;              /* #0F172A - Dark text */
+    
+    /* === CARDS === */
+    --card: 0 0% 100%;                 /* #FFFFFF - White cards */
+    --card-foreground: 240 10% 3.9%;
+    
+    /* === PRIMARY (Navy Blue) === */
+    --primary: 240 5.9% 10%;                /* #1E3A8A - Deep navy blue */
+    --primary-foreground: 0 0% 98%;   /* White text on primary */
+    
+    /* === SECONDARY === */
+    --secondary: 240 4.8% 95.9%;            /* #F1F5F9 - Light blue-gray */
+    --secondary-foreground: 240 5.9% 10%;
+    
+    /* === ACCENT (Bright Blue) === */
+    --accent: 240 4.8% 95.9%;                /* #3B82F6 - Bright blue */
+    --accent-foreground: 240 5.9% 10%;
+    
+    /* === MUTED === */
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;     /* #64748B - Gray text */
+    
+    /* === DESTRUCTIVE === */
+    --destructive: 0 84.2% 60.2%;            /* #EF4444 - Red */
+    --destructive-foreground: 0 0% 98%;
+    
+    /* === BORDERS === */
+    --border: 240 5.9% 90%;               /* #E2E8F0 - Light border */
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    
+    /* === RADIUS === */
+    --radius: 0.5rem;                    /* 8px rounded corners */
+    
+    /* === CHART COLORS === */
+    --chart-blue: 59 130 246;            /* #3B82F6 */
+    --chart-purple: 139 92 246;          /* #8B5CF6 */
+    --chart-green: 16 185 129;           /* #10B981 */
+    --chart-orange: 249 115 22;          /* #F97316 */
+    --chart-navy: 30 58 138;             /* #1E3A8A */             --popover: 0 0% 100%;             --popover-foreground: 240 10% 3.9%;             --chart-1: 12 76% 61%;             --chart-2: 173 58% 39%;             --chart-3: 197 37% 24%;             --chart-4: 43 74% 66%;             --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
+
+@layer utilities {
+  /* Card shadow matching Figma */
+  .card-shadow {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Stat card style */
+  .stat-card {
+    @apply bg-white rounded-lg p-6 card-shadow;
+  }
+  
+  /* Chart container */
+  .chart-container {
+    @apply bg-white rounded-lg p-6 card-shadow;
+  }
+}

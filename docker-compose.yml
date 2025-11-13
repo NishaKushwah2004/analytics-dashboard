@@ -1,0 +1,47 @@
+
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: analytics_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: analytics_user
+      POSTGRES_PASSWORD: analytics_pass
+      POSTGRES_DB: analytics_db
+      PGDATA: /var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U analytics_user -d analytics_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - analytics_network
+
+  vanna:
+    build:
+      context: ./services/vanna
+      dockerfile: Dockerfile
+    container_name: analytics_vanna
+    restart: unless-stopped
+    env_file:
+      - .env  # Use .env file instead of hardcoding
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - analytics_network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  analytics_network:
+    driver: bridge
