@@ -4,6 +4,9 @@ import "./globals.css";
 import { ClientWrapper } from "./client-wrapper";
 
 export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+export const revalidate = 0;
+export const runtime = "nodejs"; // disables edge prerendering (required with styled-jsx errors)
 
 
 const inter = Inter({ subsets: ["latin"] });
