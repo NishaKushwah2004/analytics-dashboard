@@ -52,7 +52,7 @@ app = FastAPI(
 ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://analytics-dashboard-five-mocha.vercel.app",
-    "https://*.vercel.app",
+    "https://analytics-dashboard-web-iota.vercel.app",
 ]
 
 # CORS
