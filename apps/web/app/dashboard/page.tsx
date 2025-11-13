@@ -9,8 +9,7 @@ async function getStats() {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
   try {
     const res = await fetch(`${baseUrl}/api/stats`, { 
-      cache: 'no-store',
-      next: { revalidate: 0 }
+      cache: 'no-store'
     });
     if (!res.ok) return { totalSpend: 0, totalInvoices: 0, documentsUploaded: 0, avgInvoiceValue: 0 };
     return res.json();
