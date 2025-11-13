@@ -3,6 +3,7 @@ import { prisma } from '@/lib/db';
 import type { Invoice } from '@prisma/client';
 
 export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 export const revalidate = 0;
 
 
