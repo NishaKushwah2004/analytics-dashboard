@@ -1,35 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  compress: true,
-  poweredByHeader: false,
-
+  swcMinify: true,
+  transpilePackages: [],
+  
+  // Disable static optimization for error pages
   experimental: {
-    serverActions: {
-      bodySizeLimit: "2mb"
-    }
+    optimizeCss: false,
   },
-
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "**"
-      }
-    ]
+  
+  // Ensure proper output configuration
+  output: 'standalone',
+  
+  // Environment variables
+  env: {
+    DATABASE_URL: process.env.DATABASE_URL,
+    VANNA_API_URL: process.env.VANNA_API_URL,
   },
+}
 
-  headers: async () => [
-    {
-      source: "/(.*)",
-      headers: [
-        {
-          key: "Cache-Control",
-          value: "no-store, must-revalidate"
-        }
-      ]
-    }
-  ]
-};
-
-module.exports = nextConfig;
+module.exports = nextConfig
