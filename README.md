@@ -6,7 +6,7 @@ A production-grade full-stack analytics dashboard featuring AI-powered natural l
 
 <div align="center">
 
-**[📊 View Interactive Architecture Diagram](./architecture.html)**
+**[📊 View Interactive Architecture Diagram](https://nishakushwah2004.github.io/analytics-dashboard/architecture.html)**
 
 *Click to see the live, interactive system architecture*
 
@@ -16,7 +16,7 @@ A production-grade full-stack analytics dashboard featuring AI-powered natural l
 
 <div align="center">
 
-**[📊 View Platform Comparision ->](./comparision.html)**
+**[📊 View Platform Comparision ->](https://nishakushwah2004.github.io/analytics-dashboard/comparision.html)**
 
 *Click to see the live, interactive system architecture*
 
