@@ -2,12 +2,26 @@
 
 A production-grade full-stack analytics dashboard featuring AI-powered natural language queries, built with Next.js, PostgreSQL, Prisma, and Groq LLM.
 
-## 🧠 System Architecture
-Click below to view architecture diagram made using Claude AI:
+## 🏗️ Architecture
 
-👉 [View Architecture Diagram](https://claude.ai/public/artifacts/c3743daa-233b-4e97-b2a1-62398f6a0929)
+<div align="center">
 
+**[📊 View Interactive Architecture Diagram](./docs/architecture.html)**
 
+Open the architecture diagram in your browser to see the complete system design.
+
+</div>
+
+### System Overview
+
+Our platform uses a modern microservices architecture:
+
+- **Frontend (Vercel)**: Next.js 14 + React 18 with TypeScript
+- **AI Layer (Render)**: Vanna AI for Text-to-SQL conversion
+- **Database (Neon)**: Serverless PostgreSQL with Prisma ORM
+- **Development**: Docker Compose for local environment
+
+[Learn more about the architecture →](./docs/architecture.html)
 
 ## 📋 Table of Contents
 

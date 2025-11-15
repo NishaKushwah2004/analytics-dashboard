@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard Architecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+        }
+        @media print {
+            body { 
+                background: white; 
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body class="gradient-bg">
+    <div class="w-full min-h-screen p-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Title -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-slate-800 mb-2">
+                    Analytics Dashboard Architecture
+                </h1>
+                <p class="text-slate-600">AI-Powered Data Analytics Platform</p>
+                <p class="text-sm text-slate-500 mt-2">
+                    <a href="https://analytics-dashboard-web-iota.vercel.app" target="_blank" class="text-blue-600 hover:underline">
+                        View Live Demo →
+                    </a>
+                </p>
+            </div>
+
+            <!-- Main Architecture -->
+            <div class="space-y-8">
+                <!-- User Layer -->
+                <div class="flex justify-center mb-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6 border-2 border-blue-300 w-64">
+                        <div class="flex items-center gap-3 mb-2">
+                            <svg class="text-blue-600" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            <div>
+                                <h3 class="font-bold text-lg">End Users</h3>
+                                <p class="text-sm text-slate-600">Web Browsers</p>
+                            </div>
+                        </div>
+                        <div class="text-xs text-slate-500 mt-2">
+                            Desktop • Mobile • Tablet
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arrow Down -->
+                <div class="flex justify-center">
+                    <div class="w-1 h-8 bg-gradient-to-b from-blue-400 to-green-400"></div>
+                </div>
+
+                <!-- Frontend Layer -->
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-300">
+                    <div class="flex items-center gap-2 mb-4">
+                        <svg class="text-green-600" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                        <h2 class="text-2xl font-bold text-green-800">Frontend Layer (Vercel)</h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white rounded-lg p-4 shadow">
+                            <h4 class="font-semibold text-green-700 mb-2">Next.js 14</h4>
+                            <ul class="text-sm text-slate-600 space-y-1">
+                                <li>• App Router</li>
+                                <li>• Server Components</li>
+                                <li>• API Routes</li>
+                                <li>• Static Generation</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow">
+                            <h4 class="font-semibold text-green-700 mb-2">React 18</h4>
+                            <ul class="text-sm text-slate-600 space-y-1">
+                                <li>• TypeScript</li>
+                                <li>• Hooks & Context</li>
+                                <li>• Client Components</li>
+                                <li>• State Management</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow">
+                            <h4 class="font-semibold text-green-700 mb-2">UI/UX</h4>
+                            <ul class="text-sm text-slate-600 space-y-1">
+                                <li>• Tailwind CSS</li>
+                                <li>• Responsive Design</li>
+                                <li>• Chart Libraries</li>
+                                <li>• Interactive Widgets</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-center">
+                        <span class="inline-block bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-semibold">
+                            🌐 analytics-dashboard-web-iota.vercel.app
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Arrows -->
+                <div class="flex justify-around">
+                    <div class="flex flex-col items-center">
+                        <div class="w-1 h-12 bg-gradient-to-b from-green-400 to-purple-400"></div>
+                        <span class="text-xs text-slate-600 mt-1">API Calls</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-1 h-12 bg-gradient-to-b from-green-400 to-orange-400"></div>
+                        <span class="text-xs text-slate-600 mt-1">SQL Queries</span>
+                    </div>
+                </div>
+
+                <!-- Middle Layer - Services -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- AI Service -->
+                    <div class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl p-6 border-2 border-purple-300">
+                        <div class="flex items-center gap-2 mb-4">
+                            <svg class="text-purple-600" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                                <rect x="9" y="9" width="6" height="6"></rect>
+                                <line x1="9" y1="1" x2="9" y2="4"></line>
+                                <line x1="15" y1="1" x2="15" y2="4"></line>
+                                <line x1="9" y1="20" x2="9" y2="23"></line>
+                                <line x1="15" y1="20" x2="15" y2="23"></line>
+                                <line x1="20" y1="9" x2="23" y2="9"></line>
+                                <line x1="20" y1="14" x2="23" y2="14"></line>
+                                <line x1="1" y1="9" x2="4" y2="9"></line>
+                                <line x1="1" y1="14" x2="4" y2="14"></line>
+                            </svg>
+                            <h2 class="text-xl font-bold text-purple-800">AI Layer (Render)</h2>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow mb-3">
+                            <h4 class="font-semibold text-purple-700 mb-2">Vanna AI Engine</h4>
+                            <ul class="text-sm text-slate-600 space-y-1">
+                                <li>• Text-to-SQL Conversion</li>
+                                <li>• FastAPI Backend</li>
+                                <li>• Groq LLM Integration</li>
+                                <li>• Query Optimization</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow">
+                            <h4 class="font-semibold text-purple-700 mb-2">Docker Container</h4>
+                            <ul class="text-sm text-slate-600 space-y-1">
+                                <li>• Python Runtime</li>
+                                <li>• ML Libraries</li>
+                                <li>• RESTful API</li>
+                                <li>• Auto-scaling</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-3 text-center">
+                            <span class="inline-block bg-purple-200 text-purple-800 px-3 py-1 rounded-full text-xs font-semibold">
+                                🤖 analytics-dashboard-ub58.onrender.com
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Database -->
+                    <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-6 border-2 border-orange-300">
+                        <div class="flex items-center gap-2 mb-4">
+                            <svg class="text-orange-600" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                            </svg>
+                            <h2 class="text-xl font-bold text-orange-800">Database (Neon)</h2>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow mb-3">
+                            <h4 class="font-semibold text-orange-700 mb-2">PostgreSQL</h4>
+                            <ul class="text-sm text-slate-600 space-y-1">
+                                <li>• Serverless Architecture</li>
+                                <li>• Connection Pooling</li>
+                                <li>• SSL/TLS Encryption</li>
+                                <li>• Auto-scaling Storage</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow">
+                            <h4 class="font-semibold text-orange-700 mb-2">Prisma ORM</h4>
+                            <ul class="text-sm text-slate-600 space-y-1">
+                                <li>• Type-safe Queries</li>
+                                <li>• Schema Migrations</li>
+                                <li>• Auto-generated Types</li>
+                                <li>• Query Optimization</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-3 text-center">
+                            <span class="inline-block bg-orange-200 text-orange-800 px-3 py-1 rounded-full text-xs font-semibold">
+                                🗄️ Neon PostgreSQL (US-East)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Development Environment -->
+                <div class="bg-gradient-to-r from-slate-50 to-gray-50 rounded-xl p-6 border-2 border-slate-300 mt-8">
+                    <div class="flex items-center gap-2 mb-4">
+                        <svg class="text-slate-600" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                        <h2 class="text-2xl font-bold text-slate-800">Local Development (Docker)</h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="bg-white rounded-lg p-4 shadow">
+                            <h4 class="font-semibold text-slate-700 mb-2">Docker Compose</h4>
+                            <ul class="text-sm text-slate-600 space-y-1">
+                                <li>• PostgreSQL Container</li>
+                                <li>• Volume Persistence</li>
+                                <li>• Network Isolation</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow">
+                            <h4 class="font-semibold text-slate-700 mb-2">Dev Server</h4>
+                            <ul class="text-sm text-slate-600 space-y-1">
+                                <li>• Hot Reload</li>
+                                <li>• localhost:3000</li>
+                                <li>• Fast Refresh</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow">
+                            <h4 class="font-semibold text-slate-700 mb-2">Version Control</h4>
+                            <ul class="text-sm text-slate-600 space-y-1">
+                                <li>• Git/GitHub</li>
+                                <li>• Branch Strategy</li>
+                                <li>• CI/CD Pipeline</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow">
+                            <h4 class="font-semibold text-slate-700 mb-2">Build Tools</h4>
+                            <ul class="text-sm text-slate-600 space-y-1">
+                                <li>• Turborepo</li>
+                                <li>• TypeScript</li>
+                                <li>• ESLint/Prettier</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security & Performance -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div class="bg-gradient-to-br from-red-50 to-rose-50 rounded-lg p-6 border border-red-200">
+                        <div class="flex items-center gap-2 mb-3">
+                            <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <h3 class="text-lg font-bold text-red-800">Security Features</h3>
+                        </div>
+                        <ul class="text-sm text-slate-700 space-y-2">
+                            <li>✓ Environment Variable Encryption</li>
+                            <li>✓ SSL/TLS Database Connections</li>
+                            <li>✓ CORS Configuration</li>
+                            <li>✓ API Rate Limiting</li>
+                            <li>✓ SQL Injection Prevention</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg p-6 border border-blue-200">
+                        <div class="flex items-center gap-2 mb-3">
+                            <svg class="text-blue-600" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                            <h3 class="text-lg font-bold text-blue-800">Performance</h3>
+                        </div>
+                        <ul class="text-sm text-slate-700 space-y-2">
+                            <li>✓ Edge Network CDN (Vercel)</li>
+                            <li>✓ Database Connection Pooling</li>
+                            <li>✓ Server-Side Rendering</li>
+                            <li>✓ Static Site Generation</li>
+                            <li>✓ Optimized Bundle Size</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Data Flow -->
+                <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-6 border-2 border-indigo-300 mt-8">
+                    <h2 class="text-2xl font-bold text-indigo-800 mb-4 text-center">Data Flow</h2>
+                    <div class="flex flex-wrap justify-center items-center gap-4 text-sm">
+                        <div class="bg-white px-4 py-2 rounded-lg shadow font-semibold">
+                            User Query
+                        </div>
+                        <span class="text-indigo-600 font-bold text-xl">→</span>
+                        <div class="bg-white px-4 py-2 rounded-lg shadow font-semibold">
+                            Next.js Frontend
+                        </div>
+                        <span class="text-indigo-600 font-bold text-xl">→</span>
+                        <div class="bg-white px-4 py-2 rounded-lg shadow font-semibold">
+                            Vanna AI (Text-to-SQL)
+                        </div>
+                        <span class="text-indigo-600 font-bold text-xl">→</span>
+                        <div class="bg-white px-4 py-2 rounded-lg shadow font-semibold">
+                            Neon PostgreSQL
+                        </div>
+                        <span class="text-indigo-600 font-bold text-xl">→</span>
+                        <div class="bg-white px-4 py-2 rounded-lg shadow font-semibold">
+                            Results + Visualization
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack Summary -->
+                <div class="bg-white rounded-xl p-6 border-2 border-slate-200 shadow-lg mt-8 mb-8">
+                    <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">Technology Stack Summary</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm">
+                        <div>
+                            <div class="font-bold text-green-700 mb-1">Frontend</div>
+                            <div class="text-slate-600">Next.js 14</div>
+                            <div class="text-slate-600">React 18</div>
+                            <div class="text-slate-600">TypeScript</div>
+                        </div>
+                        <div>
+                            <div class="font-bold text-purple-700 mb-1">AI/ML</div>
+                            <div class="text-slate-600">Vanna AI</div>
+                            <div class="text-slate-600">Groq API</div>
+                            <div class="text-slate-600">FastAPI</div>
+                        </div>
+                        <div>
+                            <div class="font-bold text-orange-700 mb-1">Database</div>
+                            <div class="text-slate-600">PostgreSQL</div>
+                            <div class="text-slate-600">Prisma ORM</div>
+                            <div class="text-slate-600">Neon</div>
+                        </div>
+                        <div>
+                            <div class="font-bold text-slate-700 mb-1">DevOps</div>
+                            <div class="text-slate-600">Docker</div>
+                            <div class="text-slate-600">Vercel</div>
+                            <div class="text-slate-600">Render</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="text-center text-sm text-slate-600 pb-8">
+                    <p>© 2024 Analytics Dashboard Project</p>
+                    <p class="mt-2">
+                        <a href="https://github.com/NishaKushwah2004/analytics-dashboard" target="_blank" class="text-blue-600 hover:underline">
+                            View on GitHub
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        console.log('✅ Architecture diagram loaded successfully!');
+        console.log('📸 To screenshot: Press Ctrl+Shift+P (Cmd+Shift+P on Mac) and type "screenshot"');
+    </script>
+</body>
+</html>
