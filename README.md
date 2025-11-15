@@ -113,7 +113,7 @@ Click below to view architecture diagram made using Claude AI:
 ## 📊 Database Schema
 
 ### Entity Relationship Diagram
-
+```
 ┌──────────────┐       ┌──────────────┐       ┌──────────────┐
 │   Document   │       │   Invoice    │       │    Vendor    │
 ├──────────────┤       ├──────────────┤       ├──────────────┤
@@ -147,7 +147,7 @@ Click below to view architecture diagram made using Claude AI:
 │ totalPrice   │  │ netDays      │  │ invoiceTotal │
 │ category     │  └──────────────┘  └──────────────┘
 └──────────────┘
-
+```
 
 ### Table Descriptions
 
@@ -467,7 +467,7 @@ npm run dev
 ## 💬 Chat with Data Workflow
 
 ### Complete Flow Diagram
-
+```
 ┌──────────────┐
 │  User Types  │
 │   Question   │
@@ -540,7 +540,7 @@ npm run dev
 │  2. Shows results table │
 │  3. Renders chart       │
 └─────────────────────────┘
-
+```
 ### Example Session
 
 **User Input:**
@@ -670,7 +670,7 @@ docker ps
 ---
 
 ## 📁 Project Structure
-
+```
 analytics-dashboard/
 ├── apps/
 │   └── web/                      # Next.js Application
@@ -702,7 +702,7 @@ analytics-dashboard/
 ├── docker-compose.yml           # PostgreSQL Setup
 └── README.md                    # This File
 
-
+```
 ---
 
 ## 🤝 Contributing
@@ -729,15 +729,5 @@ This project is licensed under the MIT License.
 - **shadcn/ui** - UI Components
 - **Recharts** - Chart Library
 
----
-
-## 📞 Support
-
-For issues or questions:
-- Open an issue on GitHub
-- Check the [Troubleshooting](#troubleshooting) section
-- Review [API Documentation](#api-documentation)
-
----
 
 **Built with ❤️ using Next.js, PostgreSQL, and AI**
