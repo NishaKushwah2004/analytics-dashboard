@@ -6,9 +6,9 @@ A production-grade full-stack analytics dashboard featuring AI-powered natural l
 
 <div align="center">
 
-**[📊 View Interactive Architecture Diagram](./docs/architecture.html)**
+**[📊 View Interactive Architecture Diagram](https://htmlpreview.github.io/?https://github.com/NishaKushwah2004/analytics-dashboard/blob/main/docs/architecture.html)**
 
-Open the architecture diagram in your browser to see the complete system design.
+*Click to see the live, interactive system architecture*
 
 </div>
 
