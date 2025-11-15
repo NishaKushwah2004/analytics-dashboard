@@ -77,7 +77,7 @@ Click below to view architecture diagram made using Claude AI:
 ---
 
 ## 🏗 Architecture
-
+```
 ┌─────────────┐
 │   Browser   │
 └──────┬──────┘
@@ -106,7 +106,7 @@ Click below to view architecture diagram made using Claude AI:
 │   Database   │◄─────│  (FastAPI)     │
 │              │      │  + Groq LLM    │
 └──────────────┘      └────────────────┘
-
+```
 
 ---
 
