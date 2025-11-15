@@ -2,6 +2,7 @@
 
 A production-grade full-stack analytics dashboard featuring AI-powered natural language queries, built with Next.js, PostgreSQL, Prisma, and Groq LLM.
 
+![Analytics Dashboard](https://claude.ai/public/artifacts/c3743daa-233b-4e97-b2a1-62398f6a0929)
 
 ## 📋 Table of Contents
 
